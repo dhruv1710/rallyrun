@@ -1,0 +1,23 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-rallyrun-staging-70556-authRole",
+      "UnauthRoleArn": "arn:aws:iam::207088432803:role/amplify-rallyrun-staging-70556-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::207088432803:role/amplify-rallyrun-staging-70556-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-rallyrun-staging-70556-deployment",
+      "UnauthRoleName": "amplify-rallyrun-staging-70556-unauthRole",
+      "StackName": "amplify-rallyrun-staging-70556",
+      "StackId": "arn:aws:cloudformation:ap-south-1:207088432803:stack/amplify-rallyrun-staging-70556/047a95c0-b5a4-11ed-9fe8-0ac5d923fac6",
+      "AmplifyAppId": "d2bp93170ktz5r"
+    },
+    "categories": {
+      "auth": {
+        "rallyrun": {}
+      },
+      "api": {
+        "rallyrun": {}
+      }
+    }
+  }
+}

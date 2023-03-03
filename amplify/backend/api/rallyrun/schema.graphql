@@ -1,0 +1,43 @@
+type DoublesMatch @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  doublesdrawID: ID! @index(name: "byDoublesDraw")
+}
+
+type DoublesDraw @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Doublesmatches: [DoublesMatch] @hasMany(indexName: "byDoublesDraw", fields: ["id"])
+}
+
+type SinglesMatch @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Players: [Player] @hasMany(indexName: "bySinglesMatch", fields: ["id"])
+  drawID: ID! @index(name: "bySinglesDraw")
+}
+
+type SinglesDraw @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Matches: [SinglesMatch] @hasMany(indexName: "bySinglesDraw", fields: ["id"])
+}
+
+type Team @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Players: [Player] @hasMany(indexName: "byTeam", fields: ["id"])
+}
+
+type Player @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  age: String
+  phone: String
+  Tournaments: [Tournament] @manyToMany(relationName: "PlayerTournament")
+  teamID: ID! @index(name: "byTeam")
+  matchID: ID! @index(name: "bySinglesMatch")
+}
+
+type Tournament @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  logo: String
+  Players: [Player] @manyToMany(relationName: "PlayerTournament")
+}
+ 
